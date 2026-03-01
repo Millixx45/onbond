@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ─────────────────────────────────────────────────────────── -->
+  <title>Toxische Beziehung Test für lesbische Frauen | UNBOND</title>
+  <meta name="description"
+    content="Finde in 5 Min heraus, ob du in einer toxischen Beziehung steckst. Kostenloser Toxikometer-Test + psychologisches Profil + 7-Tage-Erste-Hilfe-Kurs." />
+  <meta name="keywords"
+    content="toxische Beziehung Test, lesbischer Liebeskummer, Trauma Bonding, Toxikometer, toxische Partnerschaft erkennen, lesbische Frauen Beziehung" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://unbond.de/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Toxische Beziehung Test für lesbische Frauen | UNBOND" />
+  <meta property="og:description"
+    content="Finde in 5 Min heraus, ob du in einer toxischen Beziehung steckst. Kostenloser Toxikometer-Test + psychologisches Profil." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" />
+
+  <!-- ── Fonts ─────────────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════════════════════════════════════
+       CSS-VARIABLEN & RESET
+    ══════════════════════════════════════════════════════════════════ */
+    :root {
+      --sage-green:  #7A9E8A;
+      --mauve:       #9B7FA4;
+      --cream:       #F4EDE4;
+      --graphite:    #4A4E52;
+      --terracotta:  #C4836E;
+      --bordeaux:    #6B3E44;
+      --dark-green:  #2D4F3C;
+      --warning:     #D4A574;
+
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Lato', sans-serif;
+
+      --glass-bg:     rgba(244, 237, 228, 0.12);
+      --glass-border: rgba(244, 237, 228, 0.22);
+      --glass-shadow: 0 8px 32px rgba(45, 79, 60, 0.22);
+
+      --radius: 18px;
+      --transition: 0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cream);
+      background: var(--dark-green);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Wiederverwendbare Utility-Klassen ─────────────────────────── */
+    .section-inner {
+      width: min(90%, 1100px);
+      margin-inline: auto;
+    }
+
+    /* Glassmorphism-Box */
+    .content-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+    }
+
+    /* Eyebrow-Label */
+    .eyebrow {
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-green);
+      margin-bottom: 1rem;
+    }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+
+    /* CTA-Buttons */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      border: none;
+    }
+
+    .btn:hover  { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.25); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--mauve), var(--bordeaux));
+      color: var(--cream);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--sage-green);
+      color: var(--sage-green);
+    }
+
+    .btn-secondary:hover { background: var(--sage-green); color: var(--dark-green); }
+
+    /* ══════════════════════════════════════════════════════════════════
+       1 · HERO-BLOCK
+    ══════════════════════════════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* Hintergrundbild */
+    #hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          160deg,
+          rgba(45, 79, 60, 0.72) 0%,
+          rgba(107, 62, 68, 0.55) 60%,
+          rgba(45, 79, 60, 0.80) 100%
+        ),
+        url('hero.jpg') center / cover no-repeat;
+      z-index: 0;
+    }
+
+    #hero .section-inner {
+      position: relative;
+      z-index: 1;
+      padding: 7rem 0 5rem;
+    }
+
+    /* Hero-Card */
+    #hero .hero-card {
+      max-width: 680px;
+    }
+
+    #hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    #hero h1 em {
+      font-style: normal;
+      color: var(--warning);
+    }
+
+    #hero p {
+      font-size: 1.05rem;
+      color: rgba(244, 237, 228, 0.88);
+      margin-bottom: 1.1rem;
+      max-width: 560px;
+    }
+
+    /* Meta-Zeile */
+    .hero-meta {
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+      font-family: var(--font-head);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(244, 237, 228, 0.65);
+    }
+
+    .hero-meta span::before {
+      content: '✓ ';
+      color: var(--sage-green);
+    }
+
+    /* Hero-CTA */
+    .hero-cta { margin-top: 2.2rem; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       2 · PROBLEM-BLOCK
+    ══════════════════════════════════════════════════════════════════ */
+    #problem {
+      background: linear-gradient(180deg, var(--dark-green) 0%, #1e3628 100%);
+    }
+
+    #problem .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    #problem .section-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.6rem;
+    }
+
+    #problem .section-header p {
+      font-size: 1rem;
+      color: rgba(244, 237, 228, 0.7);
+      max-width: 520px;
+      margin-inline: auto;
+    }
+
+    /* Karten-Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .card-grid .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Farbiger Akzentstreifen oben */
+    .card::before {
+      content: '';
+      display: block;
+      height: 4px;
+      border-radius: 4px 4px 0 0;
+      margin: -2rem -1.75rem 1.25rem;
+    }
+
+    .card:nth-child(1)::before { background: var(--mauve); }
+    .card:nth-child(2)::before { background: var(--terracotta); }
+    .card:nth-child(3)::before { background: var(--warning); }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: rgba(244, 237, 228, 0.78);
+      line-height: 1.75;
+    }
+
+    /* Übergangszeile */
+    .transition-row {
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .transition-row p {
+      font-size: 1.05rem;
+      color: rgba(244, 237, 228, 0.7);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       3 · TOXIKOMETER-TEASER
+    ══════════════════════════════════════════════════════════════════ */
+    #toxikometer-teaser {
+      background: linear-gradient(160deg, #1e3628 0%, var(--dark-green) 100%);
+    }
+
+    .teaser-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    /* Linke Spalte */
+    .teaser-left h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 800;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .teaser-left > p {
+      font-size: 1rem;
+      color: rgba(244, 237, 228, 0.78);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Dimensionen-Liste */
+    .dim-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+    }
+
+    .dim-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: rgba(244, 237, 228, 0.85);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(244, 237, 228, 0.08);
+    }
+
+    .dim-list li:last-child { border-bottom: none; }
+
+    .dim-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Profil-Badges */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      background: rgba(155, 127, 164, 0.18);
+      border: 1px solid rgba(155, 127, 164, 0.4);
+      color: var(--mauve);
+    }
+
+    /* Rechte Spalte – SVG-Container */
+    .teaser-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .spider-wrapper {
+      position: relative;
+      width: min(100%, 380px);
+    }
+
+    .spider-caption {
+      text-align: center;
+      margin-top: 1rem;
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(244, 237, 228, 0.45);
+    }
+
+    /* SVG Spinnendiagramm */
+    .spider-svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 4px 24px rgba(155, 127, 164, 0.3));
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       4 · TEST-BLOCK
+    ══════════════════════════════════════════════════════════════════ */
+    #test {
+      background: linear-gradient(180deg, var(--dark-green) 0%, #162e22 100%);
+    }
+
+    #test .test-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    #test .test-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    #test .test-header p {
+      font-size: 0.97rem;
+      color: rgba(244, 237, 228, 0.7);
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    /* Info-Chips */
+    .info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 1.5rem auto 2rem;
+    }
+
+    .chip {
+      font-family: var(--font-head);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.1rem;
+      border-radius: 50px;
+      background: rgba(122, 158, 138, 0.15);
+      border: 1px solid rgba(122, 158, 138, 0.35);
+      color: var(--sage-green);
+    }
+
+    /* iframe */
+    .iframe-wrapper {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 820px;
+      border: none;
+      display: block;
+      background: transparent;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════════════ */
+    footer {
+      background: #0f2018;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      color: rgba(244, 237, 228, 0.38);
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: rgba(244, 237, 228, 0.55);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer a:hover { color: var(--sage-green); }
+
+    .footer-logo {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--sage-green);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MEDIA QUERIES – Desktop (>768px)
+    ══════════════════════════════════════════════════════════════════ */
+    @media (min-width: 769px) {
+
+      /* Problem-Cards: 3 Spalten */
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* Teaser: 2 Spalten */
+      .teaser-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      /* iframe etwas höher */
+      .iframe-wrapper iframe {
+        height: 920px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .teaser-grid {
+        grid-template-columns: 55% 45%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       1 · HERO-BLOCK
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero – Toxische Beziehung erkennen">
+
+    <!-- Hintergrundbild mit Overlay -->
+    <div class="hero-bg" role="img" aria-label="Zwei Hände mit Schmetterlingen – Symbol für Loslassen und Heilung"></div>
+
+    <div class="section-inner">
+      <div class="hero-card content-box">
+
+        <p class="eyebrow">Toxische Beziehung erkennen</p>
+
+        <h1>
+          Du weißt, dass etwas<br />
+          nicht stimmte. Aber<br />
+          dein Körper lässt<br class="sr-only" />
+          <em>nicht los.</em>
+        </h1>
+
+        <p>
+          Auch nach dem Ende drehen sich deine Gedanken im Kreis. Du vermisst sie –
+          obwohl sie dir wehgetan hat. Du zweifelst an dir – obwohl du gespürt hast,
+          dass etwas nicht stimmt. Das ist kein Schwäche. Das ist Neurobiologie.
+        </p>
+
+        <p>
+          Trauma Bonding ist eine chemische Bindung, die im Gehirn entsteht,
+          wenn intensive Zuneigung und Schmerz abwechseln. Dein Körper hat
+          gelernt, genau diese Spannung zu suchen – selbst wenn sie dich zerstört.
+          Hier beginnt die Entwöhnung. Sanft. Evidenzbasiert. Für dich.
+        </p>
+
+        <!-- Meta-Zeile -->
+        <div class="hero-meta" aria-label="Eigenschaften">
+          <span>Kostenlos</span>
+          <span>Anonym</span>
+          <span>5 Minuten</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="hero-cta">
+          <a href="#problem" class="btn btn-primary">Mehr erfahren →</a>
+        </div>
+
+      </div><!-- /.hero-card -->
+    </div><!-- /.section-inner -->
+
+  </section><!-- /#hero -->
+
+
+  <!-- ════════════════════════════════════════════════════════════════
+       2 · PROBLEM-BLOCK
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="problem" aria-label="Typische Muster toxischer Beziehungen">
+    <div class="section-inner">
+
+      <!-- Abschnittsheader -->
+      <header class="section-header">
+        <p class="eyebrow">Was du vielleicht kennst</p>
+        <h2>Die Muster, die sich festsetzen</h2>
+        <p>
+          Toxische Beziehungen folgen keinem Zufall – sie folgen Mustern.
+          Kennst du eines davon?
+        </p>
+      </header>
+
+      <!-- 3 Problemkarten -->
+      <div class="card-grid" role="list">
+
+        <!-- Karte 1: Der Kreislauf -->
+        <article class="card content-box" role="listitem">
+          <div class="card-icon" aria-hidden="true">🔄</div>
+          <h3>Der Kreislauf</h3>
+          <p>
+            Streit, Schweigen, Versöhnung, Harmonie – und dann wieder von vorne.
+            Der Kreislauf aus Spannung und Erleichterung erzeugt denselben
+            Dopamin-Schub wie eine Sucht. Du liebst nicht trotz des Schmerzes.
+            Du liebst auch wegen ihm – weil dein Nervensystem es so gelernt hat.
+          </p>
+        </article>
+
+        <!-- Karte 2: Die Isolation -->
+        <article class="card content-box" role="listitem">
+          <div class="card-icon" aria-hidden="true">🕸️</div>
+          <h3>Die Isolation</h3>
+          <p>
+            Langsam wurden Freund·innen weniger. Treffen fühlten sich kompliziert an.
+            Deine Welt hat sich verengt – oft ohne dass du gemerkt hast, wie es passiert ist.
+            Isolation ist kein Unfall. Sie ist Strategie: Wer dich von Unterstützung trennt,
+            behält die Deutungshoheit.
+          </p>
+        </article>
+
+        <!-- Karte 3: Gaslighting erkennen -->
+        <article class="card content-box" role="listitem">
+          <div class="card-icon" aria-hidden="true">🌀</div>
+          <h3>Gaslighting erkennen</h3>
+          <p>
+            „Das hast du dir eingebildet." „Du bist zu sensibel." „So war das nicht gemeint."
+            Gaslighting ist das systematische Untergraben deiner Wahrnehmung.
+            Wenn du dir selbst nicht mehr vertraust – dann ist das kein Defizit
+            deinerseits, sondern das Ergebnis dieser Manipulation.
+          </p>
+        </article>
+
+      </div><!-- /.card-grid -->
+
+      <!-- Übergangszeile -->
+      <div class="transition-row">
+        <p>
+          Vielleicht denkst du: „Aber so schlimm war es doch gar nicht…"<br />
+          Genau das ist Teil des Musters. Lass Fakten sprechen.
+        </p>
+        <a href="#toxikometer-teaser" class="btn btn-secondary">
+          Zeig mir, was wirklich war →
+        </a>
+      </div>
+
+    </div><!-- /.section-inner -->
+  </section><!-- /#problem -->
+
+
+  <!-- ════════════════════════════════════════════════════════════════
+       3 · TOXIKOMETER-TEASER
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="toxikometer-teaser" aria-label="Toxikometer – Der Test">
+    <div class="section-inner">
+
+      <div class="teaser-grid">
+
+        <!-- ── Linke Spalte: Inhalte ─────────────────────────── -->
+        <div class="teaser-left">
+          <p class="eyebrow">Psychologischer Test</p>
+
+          <h2>Erkenne das Muster.<br />In 5 Minuten.</h2>
+
+          <p>
+            Der Toxikometer misst deine Beziehung in fünf wissenschaftlich
+            fundierten Dimensionen. Du bekommst ein persönliches Profil –
+            kein „Gut" oder „Schlecht", sondern ein ehrliches Bild davon,
+            was du erlebt hast.
+          </p>
+
+          <!-- Dimensionen -->
+          <ul class="dim-list" aria-label="Testdimensionen">
+            <li>
+              <span class="dim-dot" style="background: var(--mauve);" aria-hidden="true"></span>
+              Machtdynamik &amp; Kontrolle
+            </li>
+            <li>
+              <span class="dim-dot" style="background: var(--terracotta);" aria-hidden="true"></span>
+              Emotionale Manipulation
+            </li>
+            <li>
+              <span class="dim-dot" style="background: var(--warning);" aria-hidden="true"></span>
+              Kommunikationsmuster
+            </li>
+            <li>
+              <span class="dim-dot" style="background: var(--sage-green);" aria-hidden="true"></span>
+              Trauma Bonding &amp; Abhängigkeit
+            </li>
+            <li>
+              <span class="dim-dot" style="background: var(--bordeaux);" aria-hidden="true"></span>
+              Selbstwert &amp; Gaslighting
+            </li>
+          </ul>
+
+          <!-- Profil-Badges -->
+          <p class="eyebrow" style="margin-bottom: 0.6rem;">Mögliche Profile</p>
+          <div class="badge-row" role="list" aria-label="Mögliche Ergebnisprofile">
+            <span class="badge" role="listitem">Verdeckte Narzisstin</span>
+            <span class="badge" role="listitem">Emotionaler Vampir</span>
+            <span class="badge" role="listitem">Kontrolltyp</span>
+            <span class="badge" role="listitem">Borderline-Muster</span>
+            <span class="badge" role="listitem">Subtile Gewalt</span>
+          </div>
+
+          <a href="#test" class="btn btn-primary">Toxikometer jetzt starten →</a>
+        </div><!-- /.teaser-left -->
+
+
+        <!-- ── Rechte Spalte: Statisches Spinnendiagramm als SVG ─ -->
+        <div class="teaser-right">
+          <div class="spider-wrapper content-box" style="padding: 1.5rem;">
+
+            <!--
+              Spinnendiagramm: 5 Achsen, regelmäßiges Fünfeck.
+              Mittelpunkt: (200, 200), Radius: 150.
+              Achsenwinkel (ab 12 Uhr, im Uhrzeigersinn, je 72°):
+                0:   (200, 50)   → oben
+                72°: (342, 161)  → rechts oben
+                144°:(285, 339)  → rechts unten
+                216°:(115, 339)  → links unten
+                288°:(58, 161)   → links oben
+
+              Beispiel-Datenwert ≈ 75 % → Radius 112.5
+            -->
+            <svg class="spider-svg"
+              viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Spinnendiagramm: Beispiel-Toxikometer-Profil mit fünf Dimensionen">
+              <title>Toxikometer – Beispiel-Profil</title>
+
+              <defs>
+                <!-- Verlauf für das Datenfünfeck -->
+                <linearGradient id="spiderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#9B7FA4" stop-opacity="0.55"/>
+                  <stop offset="100%" stop-color="#6B3E44" stop-opacity="0.55"/>
+                </linearGradient>
+
+                <!-- Glow-Filter -->
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Hintergrund -->
+              <rect width="400" height="400" fill="transparent"/>
+
+              <!-- ── Gitter-Ringe (25 %, 50 %, 75 %, 100 %) ── -->
+              <!-- 100 % → Radius 150 -->
+              <polygon points="200,50 342,161 285,339 115,339 58,161"
+                fill="none" stroke="rgba(244,237,228,0.10)" stroke-width="1"/>
+              <!-- 75 % → Radius 112.5 -->
+              <polygon points="200,87.5 321.5,171.75 253.75,301.25 146.25,301.25 78.5,171.75"
+                fill="none" stroke="rgba(244,237,228,0.10)" stroke-width="1"/>
+              <!-- 50 % → Radius 75 -->
+              <polygon points="200,125 271,182.5 242.5,263.5 157.5,263.5 129,182.5"
+                fill="none" stroke="rgba(244,237,228,0.10)" stroke-width="1"/>
+              <!-- 25 % → Radius 37.5 -->
+              <polygon points="200,162.5 220.5,193.25 221.25,225.75 178.75,225.75 179.5,193.25"
+                fill="none" stroke="rgba(244,237,228,0.07)" stroke-width="1"/>
+
+              <!-- ── Achsen ── -->
+              <line x1="200" y1="200" x2="200" y2="50"   stroke="rgba(244,237,228,0.20)" stroke-width="1"/>
+              <line x1="200" y1="200" x2="342" y2="161"  stroke="rgba(244,237,228,0.20)" stroke-width="1"/>
+              <line x1="200" y1="200" x2="285" y2="339"  stroke="rgba(244,237,228,0.20)" stroke-width="1"/>
+              <line x1="200" y1="200" x2="115" y2="339"  stroke="rgba(244,237,228,0.20)" stroke-width="1"/>
+              <line x1="200" y1="200" x2="58"  y2="161"  stroke="rgba(244,237,228,0.20)" stroke-width="1"/>
+
+              <!--
+                ── Datenfünfeck (Beispielwerte) ──
+                Dimension 1 (oben,    Machtdynamik):        85 % → r=127.5  → (200, 72.5)
+                Dimension 2 (r.oben,  Emotion. Manip.):     70 % → r=105    → (309.4,171.4)
+                Dimension 3 (r.unten, Kommunikation):       60 % → r=90     → (254.4,299.1)
+                Dimension 4 (l.unten, Trauma Bonding):      78 % → r=117    → (133.4,300.8)
+                Dimension 5 (l.oben,  Selbstwert):          65 % → r=97.5   → (94.8,166.9)
+              -->
+              <polygon
+                points="200,72.5 309.4,171.4 254.4,299.1 133.4,300.8 94.8,166.9"
+                fill="url(#spiderGrad)"
+                stroke="#9B7FA4"
+                stroke-width="2"
+                filter="url(#glow)"/>
+
+              <!-- Datenpunkte -->
+              <circle cx="200"   cy="72.5"  r="5" fill="#9B7FA4" filter="url(#glow)"/>
+              <circle cx="309.4" cy="171.4" r="5" fill="#C4836E" filter="url(#glow)"/>
+              <circle cx="254.4" cy="299.1" r="5" fill="#D4A574" filter="url(#glow)"/>
+              <circle cx="133.4" cy="300.8" r="5" fill="#7A9E8A" filter="url(#glow)"/>
+              <circle cx="94.8"  cy="166.9" r="5" fill="#6B3E44" filter="url(#glow)"/>
+
+              <!-- Mittelpunkt -->
+              <circle cx="200" cy="200" r="3" fill="rgba(244,237,228,0.4)"/>
+
+              <!-- ── Achsenbeschriftungen ── -->
+              <!-- oben -->
+              <text x="200" y="38" text-anchor="middle"
+                font-family="'Montserrat', sans-serif" font-size="11" font-weight="700"
+                fill="rgba(244,237,228,0.85)">Macht</text>
+
+              <!-- rechts oben -->
+              <text x="357" y="155" text-anchor="start"
+                font-family="'Montserrat', sans-serif" font-size="11" font-weight="700"
+                fill="rgba(244,237,228,0.85)">Manipulation</text>
+
+              <!-- rechts unten -->
+              <text x="290" y="358" text-anchor="middle"
+                font-family="'Montserrat', sans-serif" font-size="11" font-weight="700"
+                fill="rgba(244,237,228,0.85)">Kommunikation</text>
+
+              <!-- links unten -->
+              <text x="110" y="358" text-anchor="middle"
+                font-family="'Montserrat', sans-serif" font-size="11" font-weight="700"
+                fill="rgba(244,237,228,0.85)">Trauma Bonding</text>
+
+              <!-- links oben -->
+              <text x="14" y="155" text-anchor="start"
+                font-family="'Montserrat', sans-serif" font-size="11" font-weight="700"
+                fill="rgba(244,237,228,0.85)">Selbstwert</text>
+
+              <!-- Beispiel-Label -->
+              <text x="200" y="388" text-anchor="middle"
+                font-family="'Lato', sans-serif" font-size="10"
+                fill="rgba(244,237,228,0.35)">Beispiel-Profil · Dein Ergebnis kann abweichen</text>
+
+            </svg>
+
+            <p class="spider-caption">Dein persönliches Toxikometer-Profil</p>
+          </div><!-- /.spider-wrapper -->
+        </div><!-- /.teaser-right -->
+
+      </div><!-- /.teaser-grid -->
+
+    </div><!-- /.section-inner -->
+  </section><!-- /#toxikometer-teaser -->
+
+
+  <!-- ════════════════════════════════════════════════════════════════
+       4 · TEST-BLOCK
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="test" aria-label="Toxikometer-Test">
+    <div class="section-inner">
+
+      <!-- Erklärungsheader -->
+      <header class="test-header">
+        <p class="eyebrow">Jetzt starten</p>
+        <h2>Der Toxikometer-Test</h2>
+        <p>
+          25 Fragen. Skala 0–5. Ein Live-Spinnendiagramm zeigt dir in Echtzeit,
+          wie deine Antworten die fünf Dimensionen formen. Am Ende erhältst du
+          dein persönliches Profil – per E-Mail als ausführlicher Report.
+        </p>
+      </header>
+
+      <!-- Info-Chips -->
+      <div class="info-chips" role="list" aria-label="Test-Eigenschaften">
+        <span class="chip" role="listitem">25 Fragen</span>
+        <span class="chip" role="listitem">Ca. 5 Minuten</span>
+        <span class="chip" role="listitem">Live-Diagramm</span>
+        <span class="chip" role="listitem">Report per Mail</span>
+        <span class="chip" role="listitem">100 % anonym</span>
+      </div>
+
+      <!-- iframe: Toxikometer eingebettet -->
+      <div class="iframe-wrapper">
+        <iframe
+          src="UNBOND_Toxikometer_Complete.html"
+          title="UNBOND Toxikometer – Toxische Beziehung Test"
+          loading="lazy"
+          allow="clipboard-write">
+        </iframe>
+      </div>
+
+    </div><!-- /.section-inner -->
+  </section><!-- /#test -->
+
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="section-inner">
+      <p class="footer-logo">UNBOND</p>
+      <p>
+        Breaking Chains · Traumasensibles Begleitprogramm für lesbische Frauen<br />
+        <a href="UNBOND_Universal_Report_Complete.html" target="_blank" rel="noopener">
+          Beispiel-Report herunterladen
+        </a>
+        &nbsp;·&nbsp;
+        <a href="#hero">Zurück nach oben ↑</a>
+      </p>
+      <p style="margin-top: 0.75rem;">
+        &copy; 2025 UNBOND · Kein Ersatz für professionelle psychologische Beratung.<br />
+        Bei akuter Not: <a href="tel:0800111 0 111">Telefonseelsorge 0800 111 0 111</a> (kostenlos, 24 h)
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
